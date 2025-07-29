@@ -24,6 +24,9 @@ jobs:
       working-directory: ./e2e-tests
       run: npm install
 
+    - name: Print Cypress baseUrl
+      run: echo "CYPRESS_baseUrl=$CYPRESS_baseUrl"
+
     - name: Wait for frontend to be live
       run: npx wait-on $CYPRESS_baseUrl --timeout 60000  
     
