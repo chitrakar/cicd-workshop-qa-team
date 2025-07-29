@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      CYPRESS_baseUrl: https://team2-cicdws-bucket.s3.us-east-1.amazonaws.com
+      CYPRESS_BASE_URL: https://team2-cicdws-bucket.s3.us-east-1.amazonaws.com
 
     steps:
     - uses: actions/checkout@v4
@@ -25,10 +25,10 @@ jobs:
       run: npm install
 
     - name: Print Cypress baseUrl
-      run: echo "CYPRESS_baseUrl=$CYPRESS_baseUrl"
+      run: echo "CYPRESS_BASE_URL=$CYPRESS_BASE_URL"
 
     - name: Wait for frontend to be live
-      run: npx wait-on $CYPRESS_baseUrl --timeout 60000  
+      run: npx wait-on $CYPRESS_BASE_URL --timeout 60000  
     
     - name: Run Cypress
       working-directory: ./e2e-tests
