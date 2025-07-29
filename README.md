@@ -47,7 +47,7 @@ CICD-Workshop/
 - PostgreSQL (for local development)
 - npm
 
-### Local Development
+### Local Development 
 
 #### Start PostgreSQL Container (Docker)
 ```
