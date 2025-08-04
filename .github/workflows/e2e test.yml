@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      CYPRESS_BASE_URL: https://team2-cicdws-bucket.s3.us-east-1.amazonaws.com
+      CYPRESS_BASE_URL: https://t2.cicdws.bibek-mishra.com.np/
 
     steps:
     - uses: actions/checkout@v4
