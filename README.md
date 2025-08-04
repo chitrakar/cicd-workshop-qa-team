@@ -49,7 +49,7 @@ CICD-Workshop/
 
 ### Local Development 
 
-#### Start PostgreSQL Container (Docker)
+#### Start PostgreSQL Container (Docker)   
 ```
 docker run -itd --rm --name cicd-postgres \
   -e POSTGRES_DB=cicd_workshop \
