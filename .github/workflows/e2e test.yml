@@ -10,19 +10,31 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+    env:
+      CYPRESS_BASE_URL: https://t2.cicdws.bibek-mishra.com.np/
+
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install dependencies  
+      working-directory: ./frontend  
+      run: npm install  
     
     - name: Install dependencies
       working-directory: ./e2e-tests
       run: npm install
+
+    - name: Print Cypress baseUrl
+      run: echo "CYPRESS_BASE_URL=$CYPRESS_BASE_URL"
+
+    - name: Wait for frontend to be live
+      run: npx wait-on $CYPRESS_BASE_URL --timeout 60000  
     
     - name: Run Cypress
       working-directory: ./e2e-tests
       run: 
           npm run cypress:run
 
-    - name: Run tests with reports
-      working-directory: ./e2e-tests
-      run: npm run test:report 
+    # - name: Run tests with reports
+    #   working-directory: ./e2e-tests
+    #   run: npm run test:report   
