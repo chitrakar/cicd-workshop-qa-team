@@ -18,7 +18,7 @@ jobs:
         cache-dependency-path: frontend/package-lock.json
     
     - name: Install dependencies
-      working-directory: ./frontend
+      working-directory: ../frontend
       run: npm install
     
     # - name: Run unit tests
@@ -27,8 +27,8 @@ jobs:
     
     # - name: Run integration tests
     #   working-directory: ./frontend
-    #   run: npm run test:integration
+    #   run: npm run test:integration    
     
     - name: Run all tests with coverage
-      working-directory: ./frontend
+      working-directory: ../frontend
       run: npm test
